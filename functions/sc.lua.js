@@ -1,15 +1,17 @@
 export async function onRequest(context) {
-  // Ambil User-Agent dari request
+  // Ambil User-Agent dari request header
   const userAgent = context.request.headers.get('user-agent') || '';
 
-  // Jika User-Agent berisi "Roblox", ini adalah game.
+  // Periksa apakah request datang dari Roblox
   if (userAgent.includes('Roblox')) {
-    // Lanjutkan dan sajikan file asli (sc.lua)
+    // Jika YA, ini adalah game. Lanjutkan dan sajikan file asli (sc.lua)
+    // context.next() akan menyajikan aset statis yang cocok dengan path.
     return context.next(); 
   } else {
-    // Jika bukan Roblox (berarti browser), tampilkan halaman password.
-    const passwordPage = await context.env.ASSETS.fetch(new URL('/password.html', context.request.url));
-    return new Response(passwordPage.body, {
+    // Jika BUKAN (berarti browser), tampilkan halaman loader 'index.html'.
+    const loaderPage = await context.env.ASSETS.fetch(new URL('/index.html', context.request.url));
+    
+    return new Response(loaderPage.body, {
       headers: { 'content-type': 'text/html;charset=UTF-8' },
     });
   }
