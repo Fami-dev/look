@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/sc.lua",
+      "destination": "/api/sc"
+    }
+  ]
+}
