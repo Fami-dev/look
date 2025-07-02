@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 // Daftar script yang diizinkan untuk keamanan
-const ALLOWED_SCRIPTS = ['farm_script', 'pvp_helper'];
+const ALLOWED_SCRIPTS = ['climbandjump', 'pvp_helper'];
 
 export default function handler(request, response) {
   const userAgent = request.headers['user-agent'];
