@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/sc.lua",
-      "destination": "/api/script"
+      "source": "/scripts/:name.lua",
+      "destination": "/api/scripts/:name"
     }
   ]
 }
