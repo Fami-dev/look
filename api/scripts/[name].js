@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const ALLOWED_SCRIPTS = [
-    'farm_script'
+    'climbandjump'
 ];
 
 export default function handler(request, response) {
