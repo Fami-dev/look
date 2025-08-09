@@ -74,7 +74,7 @@ local function InitializeMainScript()
 
     local Window = WindUI:CreateWindow({
         Title = gradient("ArcvourHUB", Color3.fromHex("#8C46FF"), Color3.fromHex("#BE78FF")),
-        Icon = "rbxassetid://110866274282768",
+        Icon = "rbxassetid://90566677928169",
         Author = "Climb And Jump Tower V3 (PREMIUM)",
         Size = UDim2.fromOffset(500, 300),
         Folder = "ArcvourHUB_Config",
@@ -222,13 +222,17 @@ local function InitializeMainScript()
 
         Tabs.Farming:Dropdown({
             Title = "Claim Delay",
-            Values = {"10 Seconds", "15 Seconds", "30 Seconds"},
+            Values = {"10 Seconds", "15 Seconds", "20 Seconds", "25 Seconds", "30 Seconds"},
             Value = "15 Seconds",
             Callback = function(selection)
                 if selection == "10 Seconds" then
                     winsClaimDelay = 10
                 elseif selection == "15 Seconds" then
                     winsClaimDelay = 15
+                elseif selection == "20 Seconds" then
+                    winsClaimDelay = 20
+                elseif selection == "25 Seconds" then
+                    winsClaimDelay = 25
                 elseif selection == "30 Seconds" then
                     winsClaimDelay = 30
                 end
@@ -242,8 +246,8 @@ local function InitializeMainScript()
     do
         Tabs.Hatching:Section({ Title = "Auto Hatch Eggs" })
 
-        local orderedEggNames = {"Egg 1 (Eiffel Tower)", "Egg 2 (Eiffel Tower)", "Egg 3 (Eiffel Tower)","Egg 1 (Empire State Bulding)", "Egg 2 (Empire State Bulding)", "Egg 3 (Empire State Bulding)","Egg 1 (Oriental Pearl Tower)", "Egg 2 (Oriental Pearl Tower)","Egg 1 (Big Ben)", "Egg 2 (Big Ben)","Egg 1 (Obelisk)", "Egg 2 (Obelisk)","Egg 1 (Leaning Tower)", "Egg 2 (Leaning Tower)","Egg 1 (Burj Khalifa Tower)", "Egg 2 (Burj Khalifa Tower)", "Egg 3 (Burj Khalifa Tower)","Egg 1 (Pixel World)", "Egg 2 (Pixel World)", "Egg 3 (Pixel World)","Egg 1 (Tokyo Tower)", "Egg 2 (Tokyo Tower)", "Egg 3 (Tokyo Tower)", "Egg 1 (Petronas Towers)", "Egg 2 (Petronas Towers)", "Egg 3 (Petronas Towers)", "Egg 1 (Mount Everest)", "Egg 2 (Mount Everest)"}
-        local eggLookupTable = {["Egg 1 (Eiffel Tower)"]=7000001,["Egg 2 (Eiffel Tower)"]=7000002,["Egg 3 (Eiffel Tower)"]=7000003,["Egg 1 (Empire State Bulding)"]=7000004,["Egg 2 (Empire State Bulding)"]=7000005,["Egg 3 (Empire State Bulding)"]=7000006,["Egg 1 (Oriental Pearl Tower)"]=7000007,["Egg 2 (Oriental Pearl Tower)"]=7000008,["Egg 1 (Big Ben)"]=7000009,["Egg 2 (Big Ben)"]=7000010,["Egg 1 (Obelisk)"]=7000011,["Egg 2 (Obelisk)"]=7000012,["Egg 1 (Leaning Tower)"]=7000013,["Egg 2 (Leaning Tower)"]=7000014,["Egg 1 (Burj Khalifa Tower)"]=7000015,["Egg 2 (Burj Khalifa Tower)"]=7000016,["Egg 3 (Burj Khalifa Tower)"]=7000017,["Egg 1 (Pixel World)"]=7000018,["Egg 2 (Pixel World)"]=7000019,["Egg 3 (Pixel World)"]=7000020,["Egg 1 (Tokyo Tower)"]=7000021,["Egg 2 (Tokyo Tower)"]=7000022,["Egg 3 (Tokyo Tower)"]=7000023, ["Egg 1 (Petronas Towers)"]=7000026, ["Egg 2 (Petronas Towers)"]=7000027, ["Egg 3 (Petronas Towers)"]=7000028, ["Egg 1 (Mount Everest)"]=7000029, ["Egg 2 (Mount Everest)"]=7000030}
+        local orderedEggNames = {"Egg 1 (Eiffel Tower)", "Egg 2 (Eiffel Tower)", "Egg 3 (Eiffel Tower)","Egg 1 (Empire State Bulding)", "Egg 2 (Empire State Bulding)", "Egg 3 (Empire State Bulding)","Egg 1 (Oriental Pearl Tower)", "Egg 2 (Oriental Pearl Tower)","Egg 1 (Big Ben)", "Egg 2 (Big Ben)","Egg 1 (Obelisk)", "Egg 2 (Obelisk)","Egg 1 (Leaning Tower)", "Egg 2 (Leaning Tower)","Egg 1 (Burj Khalifa Tower)", "Egg 2 (Burj Khalifa Tower)", "Egg 3 (Burj Khalifa Tower)","Egg 1 (Pixel World)", "Egg 2 (Pixel World)", "Egg 3 (Pixel World)","Egg 1 (Tokyo Tower)", "Egg 2 (Tokyo Tower)", "Egg 3 (Tokyo Tower)", "Egg 1 (Petronas Towers)", "Egg 2 (Petronas Towers)", "Egg 3 (Petronas Towers)", "Egg 1 (Mount Everest)", "Egg 2 (Mount Everest)", "Egg 1 (CN Tower)", "Egg 2 (CN Tower)", "Egg 3 (CN Tower)"}
+        local eggLookupTable = {["Egg 1 (Eiffel Tower)"]=7000001,["Egg 2 (Eiffel Tower)"]=7000002,["Egg 3 (Eiffel Tower)"]=7000003,["Egg 1 (Empire State Bulding)"]=7000004,["Egg 2 (Empire State Bulding)"]=7000005,["Egg 3 (Empire State Bulding)"]=7000006,["Egg 1 (Oriental Pearl Tower)"]=7000007,["Egg 2 (Oriental Pearl Tower)"]=7000008,["Egg 1 (Big Ben)"]=7000009,["Egg 2 (Big Ben)"]=7000010,["Egg 1 (Obelisk)"]=7000011,["Egg 2 (Obelisk)"]=7000012,["Egg 1 (Leaning Tower)"]=7000013,["Egg 2 (Leaning Tower)"]=7000014,["Egg 1 (Burj Khalifa Tower)"]=7000015,["Egg 2 (Burj Khalifa Tower)"]=7000016,["Egg 3 (Burj Khalifa Tower)"]=7000017,["Egg 1 (Pixel World)"]=7000018,["Egg 2 (Pixel World)"]=7000019,["Egg 3 (Pixel World)"]=7000020,["Egg 1 (Tokyo Tower)"]=7000021,["Egg 2 (Tokyo Tower)"]=7000022,["Egg 3 (Tokyo Tower)"]=7000023, ["Egg 1 (Petronas Towers)"]=7000026, ["Egg 2 (Petronas Towers)"]=7000027, ["Egg 3 (Petronas Towers)"]=7000028, ["Egg 1 (Mount Everest)"]=7000029, ["Egg 2 (Mount Everest)"]=7000030, ["Egg 1 (CN Tower)"]=7000031, ["Egg 2 (CN Tower)"]=7000032, ["Egg 3 (CN Tower)"]=7000033}
         local selectedEggID = eggLookupTable[orderedEggNames[1]]
         local hatchAmount = 1
 
@@ -809,7 +813,8 @@ local function InitializeMainScript()
             { Name = "Pixel World", WorldID = 8 },
             { Name = "Tokyo Tower", WorldID = 9 },
             { Name = "Petronas Towers", WorldID = 10 },
-            { Name = "Mount Everest", WorldID = 11 }
+            { Name = "Mount Everest", WorldID = 11 },
+            { Name = "CN Tower", WorldID = 12 }
         }
 
         for _, location in ipairs(teleportLocations) do
